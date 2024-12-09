@@ -1,0 +1,17 @@
+double salário, vendas, total;
+string nome;
+
+Console.WriteLine("digite o teu nome ");
+nome = Console.ReadLine();
+
+Console.WriteLine("digite o teu salário");
+salário = double.Parse(Console.ReadLine());
+
+Console.WriteLine("digite o valor em vendas no mês");
+vendas = double.Parse(Console.ReadLine());
+
+total= salário+(vendas*0.2);
+
+Console.WriteLine("vendedor :" + nome);
+Console.WriteLine("salário =  " + salário);
+Console.WriteLine("total = " + total);
