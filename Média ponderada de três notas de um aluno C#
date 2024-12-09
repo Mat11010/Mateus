@@ -1,0 +1,19 @@
+ double nota1, nota2, nota3, média;
+    string nome;
+
+    Console.WriteLine("Informe o nome do aluno");
+    nome = Console.ReadLine();
+
+    Console.WriteLine("Informe a nota da primeira prova");
+    nota1 = double.Parse(Console.ReadLine());
+
+    Console.WriteLine("Informe a nota da segunda prova");
+    nota2 = double.Parse(Console.ReadLine());
+
+    Console.WriteLine("Informe a nota da terceira prova");
+    nota3 = double.Parse(Console.ReadLine());
+
+    média = nota1*2+nota2*4+nota3*6/ 12;
+
+    Console.WriteLine("aluno " + nome);
+    Console.WriteLine("média ponderada " + média);
