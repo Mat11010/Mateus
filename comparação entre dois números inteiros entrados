@@ -1,0 +1,23 @@
+int num1, num2;
+        Console.WriteLine("informe o primeiro número");
+        num1=int.Parse(Console.ReadLine());
+
+        Console.WriteLine("informe o segundo número");
+        num2=int.Parse(Console.ReadLine());
+
+        if (num1 == num2)
+        {
+            Console.WriteLine("primeiro e segundo número são iguais");
+        }
+       else
+        {
+            Console.WriteLine("primeiro e segundo número são diferentes");
+        }
+       if (num2>num1)
+        {
+            Console.WriteLine("segundo número é maior");
+        }
+        else
+        {
+            Console.WriteLine("primeiro número é maior");
+        }
