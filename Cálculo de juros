@@ -1,0 +1,105 @@
+static void Main(string[] args)
+    {
+        while (true)
+        {
+            Console.WriteLine("Selecione uma opção:");
+            Console.WriteLine("1 - Calcular taxa de juros");
+            Console.WriteLine("2 - Calcular valor das parcelas");
+            Console.WriteLine("3 - Calcular juros");
+            Console.WriteLine("4 - Calcular valor acrescido de juros");
+            Console.WriteLine("0 - Sair");
+            Console.Write("Opção: ");
+
+            int opcao = Convert.ToInt32(Console.ReadLine());
+
+            if (opcao == 0)
+            {
+                Console.WriteLine("Programa encerrado.");
+                break;
+            }
+
+            switch (opcao)
+            {
+                case 1:
+                    CalcularTaxaDeJuros();
+                    break;
+                case 2:
+                    CalcularValorDasParcelas();
+                    break;
+                case 3:
+                    CalcularJuros();
+                    break;
+                case 4:
+                    CalcularValorAcrescidoDeJuros();
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida.");
+                    break;
+            }
+
+            Console.WriteLine();
+        }
+    }
+
+    static void CalcularTaxaDeJuros()
+    {
+        Console.Write("Digite o valor principal: ");
+        double valorPrincipal = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Digite o valor dos juros: ");
+        double juros = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Digite o número de parcelas: ");
+        int numeroParcelas = Convert.ToInt32(Console.ReadLine());
+
+        double taxaDeJuros = (juros / (valorPrincipal * numeroParcelas)) * 100;
+
+        Console.WriteLine($"A taxa de juros é: {taxaDeJuros}%");
+    }
+
+    static void CalcularValorDasParcelas()
+    {
+        Console.Write("Digite o valor principal: ");
+        double valorPrincipal = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Digite o valor dos juros: ");
+        double juros = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Digite o número de parcelas: ");
+        int numeroParcelas = Convert.ToInt32(Console.ReadLine());
+
+        double valorParcelas = (valorPrincipal + juros) / numeroParcelas;
+
+        Console.WriteLine($"O valor das parcelas é: R${valorParcelas:F2}");
+    }
+
+    static void CalcularJuros()
+    {
+        Console.Write("Digite o valor principal: ");
+        double valorPrincipal = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Digite o número de parcelas: ");
+        int numeroParcelas = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Digite a taxa de juros (em %): ");
+        double taxaDeJuros = Convert.ToDouble(Console.ReadLine());
+
+        double juros = (valorPrincipal * numeroParcelas * taxaDeJuros) / 100;
+
+        Console.WriteLine($"O valor dos juros é: R${juros:F2}");
+    }
+
+    static void CalcularValorAcrescidoDeJuros()
+    {
+        Console.Write("Digite o valor principal: ");
+        double valorPrincipal = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Digite o número de parcelas: ");
+        int numeroParcelas = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Digite a taxa de juros (em %): ");
+        double taxaDeJuros = Convert.ToDouble(Console.ReadLine());
+
+        double juros = (valorPrincipal * numeroParcelas * taxaDeJuros);
+    }
+}
