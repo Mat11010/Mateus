@@ -1,0 +1,112 @@
+Console.WriteLine("EXIBIÇÃO DIAGONAL,TRIÂNGULO INFERIOR,SUPERIOR...");
+Console.WriteLine("Digite dezesseis números");
+int[,]matriz=new int[4,4];
+int alternativa;
+int i=0, j=0;
+
+for(i=0;i<4;i++)
+{
+    for( j=0;j<4;j++)
+{
+        matriz[i,j] = int.Parse(Console.ReadLine());
+}
+}
+
+Console.WriteLine("\nDigite o número da opção desejada\n");
+Console.WriteLine("1.Matriz" );
+Console.WriteLine("2.Diagonal Principal ");
+Console.WriteLine("3.Triangulo superior");
+Console.WriteLine("4.Triangulo inferior");
+Console.WriteLine("5.Sair\n");
+
+alternativa=int.Parse(Console.ReadLine());
+Console.WriteLine("\n");
+
+if (alternativa== 1)
+{
+    exibirMatriz(matriz);
+}
+if(alternativa==2)
+{
+    diagonalPrincipal(matriz);
+}
+if(alternativa==3)
+{
+    trianguloSuperior(matriz);
+}
+if (alternativa == 4)
+{
+    trianguloInferior(matriz);
+}
+if(alternativa==5)
+{
+    Console.WriteLine("FIM DO PROGRAMA");
+}
+static void exibirMatriz(int[,] matriz)
+{
+    Console.WriteLine("Valores da matriz:");
+
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            Console.Write(matriz[i, j] + "  ");
+        }
+        Console.WriteLine();
+    }
+}
+
+static void diagonalPrincipal(int[,]matriz)
+{
+    for(int i = 0; i < 4; i++)
+    {
+        for(int j=0; j < 4; j++)
+        {
+            if (i == j)
+            {
+                Console.Write(matriz[i, j] + " ");
+            }
+            else
+            {
+                Console.Write(" ");
+            } 
+       
+        }
+        Console.WriteLine();
+    }
+
+}
+
+   static void trianguloSuperior(int[,] matriz)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (i < j)
+            {
+                Console.Write(matriz[i, j] + " ");
+            }
+            else
+            {
+                Console.Write("  ");
+            }
+        }
+        Console.WriteLine();
+    }
+}
+
+static void trianguloInferior(int[,] matriz)
+{
+    for (int i=0; i < 4; i++)
+    {
+        for(int j=0;j<4;j++)
+        {
+            if (i >j)
+            {
+                Console.Write(matriz[i, j]+ " ");
+            }
+        }
+        Console.WriteLine();
+    }
+}
