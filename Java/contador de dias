@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+/**
+ *
+ * @author mateu
+ */
+public class JavaApplication20 {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int[]vetor= {31,28,31,30,31,30,31,31,30,31,30,31};
+        String []meses={"janeiro","fevereiro","março","abril", "maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"};
+        System.out.println("De qual mês do ano quer saber a quantidade de dias,digite o número,ex.:1(janeiro)");
+        int i=0;
+        Scanner scanner=new Scanner(System.in);
+        
+        String mes =scanner.next();
+      
+        for(i=0;i<11;i++);
+        
+        {    
+            meses[i]=mes;
+            if(meses[i]==mes)        
+        
+        System.out.print("O mês de " +meses[i]+" possui "+vetor[i]+" dias");
+       
+        }
+    } 
+}
