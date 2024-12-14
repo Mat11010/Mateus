@@ -1,0 +1,31 @@
+import datetime
+
+# Função para calcular o próximo dia útil
+def proximo_dia_util(data):
+    # Se for sábado (5) ou domingo (6), adiciona os dias para pular o final de semana
+    if data.weekday() == 5:  # Sábado
+        return data + datetime.timedelta(days=2)  # Vai para segunda-feira
+    elif data.weekday() == 6:  # Domingo
+        return data + datetime.timedelta(days=1)  # Vai para segunda-feira
+    else:
+        return data  # Se for um dia útil, retorna o mesmo dia
+
+# Função para calcular a data de conclusão após N dias úteis
+def calcular_data_conclusao(data_inicio, dias_uteis):
+    data_atual = data_inicio
+    for _ in range(dias_uteis):
+        data_atual = proximo_dia_util(data_atual + datetime.timedelta(days=1))
+    return data_atual
+
+# Entrada de dados
+data_inicio_str = input("Digite a data de início (DD/MM/AAAA): ")
+dias_uteis = int(input("Digite a quantidade de dias úteis: "))
+
+# Convertendo a string de data para objeto datetime
+data_inicio = datetime.datetime.strptime(data_inicio_str, "%d/%m/%Y").date()
+
+# Calculando a data de conclusão
+data_conclusao = calcular_data_conclusao(data_inicio, dias_uteis)
+
+# Exibindo o resultado
+print(f"A data de conclusão após {dias_uteis} dias úteis será: {data_conclusao.strftime('%d/%m/%Y')}")
