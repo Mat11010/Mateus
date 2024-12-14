@@ -1,0 +1,21 @@
+double i = 0, N, divisivel = 0,contador=0 ;
+Console.WriteLine("digite um número e descubra se ele é primo!");
+N=int.Parse(Console.ReadLine());
+
+while (i <= N)
+{
+
+    divisivel = N % i;
+    if (divisivel == 0)
+    
+        contador = contador + 1;
+    
+    i++;
+}
+   if (contador == 2)
+{
+    Console.WriteLine("O número {0} é primo ", N);
+}
+else
+{
+    Console.WriteLine("o número {0} não é primo", N);
