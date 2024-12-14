@@ -1,0 +1,19 @@
+# Desafio do Cosmo
+import numpy as np
+234
+
+numeros=[]
+for i in range(10):
+  numero=int(input("Digite 10 números inteiros "))
+  numeros.append(numero)
+array=np.array(numeros)
+print(array)
+print(numeros)
+
+print("Média ",np.mean(array))
+
+desvio_padrao=np.std(array)
+print(desvio_padrao)
+soma=np.sum(array)
+print(soma)
+
